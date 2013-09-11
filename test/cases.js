@@ -7,6 +7,7 @@ this.b = 'b';
 
 // 3
 (function(win) {
+  win.a = 'ac';
   win.c = 'c';
 })(window);
 
@@ -41,12 +42,15 @@ i = 123;
 
 /*********** false positive tests *****************/
 
-// 8
+// 9
 (function(window) {
   window.y = 'y';
+  function foo(){
+    window.y2 = 'y2';
+  }
 })({});
 
-// 9
+// 10
 (function() {
   this.z = 'z';
 }).call({});

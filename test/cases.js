@@ -1,28 +1,32 @@
-// 1
 var a = 'a',
     a2 = 'a2';
 
-// 2
 this.b = 'b';
+window.b2 = 'b2';
 
-// 3
+function fn1(arg1){
+  a3 = 'a3';
+  arg1 = 'arg1';
+  function fn2(){
+    arg1 = a4 = 'arg2';
+  }
+}
+
 (function(win) {
+  win.a = 'ac';
   win.c = 'c';
 })(window);
 
-// 4
 (function(win) {
   var da;
   da = win.d = 'd';
   var db = win.e = 'e';
 })(window);
 
-// 5
 (function() {
   this.f = 'f';
 }).call(this);
 
-// 6
 (function() {
   var ga = this;
   var gb = ga.g = 'g';
@@ -30,25 +34,57 @@ this.b = 'b';
   gc = ga.h = 'h';
 }).call(this);
 
-// 7
 i = 123;
 
-// 8
 (function() {
   this.j = 4;
 }).call(null);
 
 
+(function(){
+  window['k'] = 'k';
+  this['k2'] = 'k2';
+}());
+
 /*********** false positive tests *****************/
 
-// 8
 (function(window) {
   window.y = 'y';
+  function foo(){
+    window.y2 = 'y2';
+  }
 })({});
 
-// 9
 (function() {
   this.z = 'z';
 }).call({});
 
+(function(window, undefined){
+  foo.bar = function(arg){
+    return arg + 1;
+  };
+}(window));
+
+(function(){
+  var obj = {
+    setName: function(name){
+      this.name = name;
+    }
+  };
+  obj.reset = function(){
+    this.color = null;
+  };
+}());
+
+(function(){
+  function fn(val){
+    val = 123;
+  }
+}());
+
+(function(){
+  var foo = getBar(function(lang){
+    lang = 'lang';
+  });
+}());
 

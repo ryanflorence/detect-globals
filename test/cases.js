@@ -80,3 +80,11 @@ i = 123;
     val = 123;
   }
 }());
+
+
+(function(){
+  var foo = getBar(function(lang){
+    lang = 'lang';
+  });
+}());
+

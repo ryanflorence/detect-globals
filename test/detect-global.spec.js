@@ -5,18 +5,7 @@ describe('detectGlobals', function() {
 
   it('detects globals', function() {
     var globals = detect.fromFile(__dirname+'/cases.js');
-    globals.should.contain('a');
-    globals.should.contain('a2');
-    globals.should.contain('b');
-    globals.should.contain('c');
-    globals.should.contain('d');
-    globals.should.contain('e');
-    globals.should.contain('f');
-    globals.should.contain('g');
-    globals.should.contain('h');
-    globals.should.contain('i');
-
-    // checks for false positives
+    // checks for matches and false positives
     globals.should.eql([
       'a',
       'a2',
@@ -27,7 +16,8 @@ describe('detectGlobals', function() {
       'f',
       'g',
       'h',
-      'i'
+      'i',
+      'j'
     ]);
   });
 

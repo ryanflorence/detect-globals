@@ -12,9 +12,9 @@ this.b = 'b';
 
 // 4
 (function(win) {
-  var a;
-  a = win.d = 'd';
-  var b = win.e = 'e';
+  var da;
+  da = win.d = 'd';
+  var db = win.e = 'e';
 })(window);
 
 // 5
@@ -24,14 +24,19 @@ this.b = 'b';
 
 // 6
 (function() {
-  var a = this;
-  var b = a.g = 'g';
-  var c;
-  c = a.h = 'h';
+  var ga = this;
+  var gb = ga.g = 'g';
+  var gc;
+  gc = ga.h = 'h';
 }).call(this);
 
 // 7
 i = 123;
+
+// 8
+(function() {
+  this.j = 4;
+}).call(null);
 
 
 /*********** false positive tests *****************/

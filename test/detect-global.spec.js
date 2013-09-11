@@ -19,7 +19,9 @@ describe('detectGlobals', function() {
     // checks for false positives
     globals.should.eql([
       'a',
+      'a2',
       'b',
+      'b2',
       'c',
       'd',
       'e',

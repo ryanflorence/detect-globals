@@ -1,29 +1,30 @@
-// 1
 var a = 'a',
     a2 = 'a2';
 
-// 2
 this.b = 'b';
 
-// 3
+function fn1(arg1){
+  arg1 = 'arg1';
+  function fn2(){
+    arg1 = 'arg2';
+  }
+}
+
 (function(win) {
   win.a = 'ac';
   win.c = 'c';
 })(window);
 
-// 4
 (function(win) {
   var da;
   da = win.d = 'd';
   var db = win.e = 'e';
 })(window);
 
-// 5
 (function() {
   this.f = 'f';
 }).call(this);
 
-// 6
 (function() {
   var ga = this;
   var gb = ga.g = 'g';
@@ -31,10 +32,8 @@ this.b = 'b';
   gc = ga.h = 'h';
 }).call(this);
 
-// 7
 i = 123;
 
-// 8
 (function() {
   this.j = 4;
 }).call(null);
@@ -42,7 +41,6 @@ i = 123;
 
 /*********** false positive tests *****************/
 
-// 9
 (function(window) {
   window.y = 'y';
   function foo(){
@@ -50,19 +48,16 @@ i = 123;
   }
 })({});
 
-// 10
 (function() {
   this.z = 'z';
 }).call({});
 
-// 11
 (function(window, undefined){
   foo.bar = function(arg){
     return arg + 1;
   };
 }(window));
 
-// 12
 (function(){
   var obj = {
     setName: function(name){
@@ -74,13 +69,11 @@ i = 123;
   };
 }());
 
-
 (function(){
   function fn(val){
     val = 123;
   }
 }());
-
 
 (function(){
   var foo = getBar(function(lang){

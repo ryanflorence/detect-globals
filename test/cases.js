@@ -74,3 +74,9 @@ i = 123;
   };
 }());
 
+
+(function(){
+  function fn(val){
+    val = 123;
+  }
+}());

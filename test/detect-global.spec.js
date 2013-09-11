@@ -8,26 +8,26 @@ describe('detectGlobals', function() {
     globals.should.contain('a');
     globals.should.contain('a2');
     globals.should.contain('b');
-    globals.should.contain('b2');
     globals.should.contain('c');
     globals.should.contain('d');
     globals.should.contain('e');
     globals.should.contain('f');
     globals.should.contain('g');
     globals.should.contain('h');
+    globals.should.contain('i');
 
     // checks for false positives
     globals.should.eql([
       'a',
       'a2',
       'b',
-      'b2',
       'c',
       'd',
       'e',
       'f',
       'g',
-      'h'
+      'h',
+      'i'
     ]);
   });
 

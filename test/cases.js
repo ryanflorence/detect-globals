@@ -2,6 +2,7 @@ var a = 'a',
     a2 = 'a2';
 
 this.b = 'b';
+window.b2 = 'b2';
 
 function fn1(arg1){
   arg1 = 'arg1';

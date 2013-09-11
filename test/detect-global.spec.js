@@ -10,6 +10,7 @@ describe('detectGlobals', function() {
       'a',
       'a2',
       'b',
+      'b2',
       'fn1',
       'c',
       'd',

@@ -4,8 +4,8 @@
   "description": "detect globals created from JavaScript source code",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --require should --reporter dot --ui bdd $(find test -name \"*.spec.js\")",
-    "watch-test": "mocha -w --require should --reporter list --ui bdd $(find test -name \"*.spec.js\")"
+    "test": "mocha --require should --reporter dot --ui bdd 'test/*.spec.js'",
+    "watch-test": "mocha -w --require should --reporter list --ui bdd 'test/*.spec.js'"
   },
   "repository": {
     "type": "git",

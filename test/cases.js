@@ -62,4 +62,15 @@ i = 123;
   };
 }(window));
 
+// 12
+(function(){
+  var obj = {
+    setName: function(name){
+      this.name = name;
+    }
+  };
+  obj.reset = function(){
+    this.color = null;
+  };
+}());
 

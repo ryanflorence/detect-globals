@@ -1,5 +1,8 @@
-var a = 'a';
+var a = 'a',
+    a2 = 'a2';
+
 this.b = 'b';
+b2 = 'b2';
 
 (function(win) {
   win.c = 'c';

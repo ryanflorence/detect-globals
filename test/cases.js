@@ -55,4 +55,11 @@ i = 123;
   this.z = 'z';
 }).call({});
 
+// 11
+(function(window, undefined){
+  foo.bar = function(arg){
+    return arg + 1;
+  };
+}(window));
+
 

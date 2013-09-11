@@ -12,6 +12,8 @@ describe('detectGlobals', function() {
       'b',
       'b2',
       'fn1',
+      'a3',
+      'a4',
       'c',
       'd',
       'e',
@@ -19,7 +21,9 @@ describe('detectGlobals', function() {
       'g',
       'h',
       'i',
-      'j'
+      'j',
+      'k',
+      'k2'
     ]);
   });
 

@@ -5,9 +5,10 @@ this.b = 'b';
 window.b2 = 'b2';
 
 function fn1(arg1){
+  a3 = 'a3';
   arg1 = 'arg1';
   function fn2(){
-    arg1 = 'arg2';
+    arg1 = a4 = 'arg2';
   }
 }
 
@@ -39,6 +40,11 @@ i = 123;
   this.j = 4;
 }).call(null);
 
+
+(function(){
+  window['k'] = 'k';
+  this['k2'] = 'k2';
+}());
 
 /*********** false positive tests *****************/
 

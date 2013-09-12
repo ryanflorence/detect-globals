@@ -3,13 +3,16 @@ var detect = require('../index');
 
 describe('detectGlobals', function() {
 
-  it('detects globals', function() {
+  it('should detect globals and ignore false positives', function() {
     var globals = detect.fromFile(__dirname+'/cases.js');
-    // checks for matches and false positives
     globals.should.eql([
       'a',
       'a2',
       'b',
+      'b2',
+      'fn1',
+      'a3',
+      'a4',
       'c',
       'd',
       'e',
@@ -17,7 +20,9 @@ describe('detectGlobals', function() {
       'g',
       'h',
       'i',
-      'j'
+      'j',
+      'k',
+      'k2'
     ]);
   });
 

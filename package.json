@@ -1,7 +1,7 @@
 {
   "name": "detect-globals",
   "version": "0.0.0",
-  "description": "detect globals created from JavaScript source code",
+  "description": "almost detect globals created from JavaScript source code",
   "main": "index.js",
   "scripts": {
     "test": "mocha --require should --reporter dot --ui bdd 'test/*.spec.js'",
